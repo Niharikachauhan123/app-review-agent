@@ -1,0 +1,15 @@
+﻿venv/
+venv2/
+__pycache__/
+*.pyc
+*.pyo
+.env
+node_modules/
+dist/
+.DS_Store
+*.egg-info/
+.cache/
+backend/venv/
+backend/venv2/
+frontend/node_modules/
+frontend/dist/

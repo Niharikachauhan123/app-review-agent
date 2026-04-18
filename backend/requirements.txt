@@ -12,3 +12,5 @@ google-play-scraper
 requests
 python-dotenv
 nltk
+transformers
+torch

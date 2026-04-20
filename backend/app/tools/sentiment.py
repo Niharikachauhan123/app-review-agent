@@ -1,21 +1,12 @@
-from transformers import pipeline
+from textblob import TextBlob
 import pandas as pd
 
-print("Loading sentiment model...")
-sentiment_pipeline = pipeline(
-    "sentiment-analysis",
-    model="cardiffnlp/twitter-roberta-base-sentiment-latest",
-    truncation=True,
-    max_length=512
-)
-print("Sentiment model loaded!")
-from textblob import TextBlob
 
 def analyze_sentiment(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty:
         return df
 
-    def quick_sentiment(text):
+    def get_sentiment(text):
         analysis = TextBlob(str(text))
         score = analysis.sentiment.polarity
         if score > 0.1:
@@ -25,10 +16,9 @@ def analyze_sentiment(df: pd.DataFrame) -> pd.DataFrame:
         else:
             return "neutral", round(abs(score), 3)
 
-    results = df["review"].apply(quick_sentiment)
+    results = df["review"].apply(get_sentiment)
     df["sentiment"] = results.apply(lambda x: x[0])
     df["sentiment_score"] = results.apply(lambda x: x[1])
-
     return df
 
 

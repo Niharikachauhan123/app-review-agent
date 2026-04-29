@@ -88,18 +88,6 @@ Create `backend/.env`:
 | `GET /test-ml/{app_name}` | Test ML models |
 | `GET /health` | Health check |
 
-## 🎯 JD Coverage
-
-This project covers requirements from all 3 internship applications:
-- ✅ NLP + Deep Learning (sentiment analysis, transformers)
-- ✅ ML Models (XGBoost, Random Forest, Logistic Regression)
-- ✅ Tool-calling Agent (Groq LLM orchestrating multiple tools)
-- ✅ JSON Schema + Pydantic validation
-- ✅ Retry logic with Tenacity
-- ✅ REST API with FastAPI
-- ✅ Data preprocessing pipeline
-- ✅ Interactive dashboard with charts
-- ✅ Structured outputs with guardrails
 
 ## 👩‍💻 Author
 Niharika Chauhan — [GitHub](https://github.com/Niharikachauhan123)
